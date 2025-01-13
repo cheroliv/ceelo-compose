@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CeeloCompose"
+rootProject.name = "ceelo-compose"
 include(":app")

@@ -18,7 +18,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "0.0.1"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -35,16 +34,13 @@ android {
         sourceCompatibility = VERSION_11
         targetCompatibility = VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = VERSION_11.majorVersion
-    }
-    buildFeatures {
-        compose = true
-    }
+    kotlinOptions.jvmTarget = VERSION_11.majorVersion
+
+    buildFeatures.compose = true
+
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -62,5 +58,4 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     testImplementation(libs.kotlin.test)
     testImplementation(libs.kotlin.test.junit)
-
 }
