@@ -7,6 +7,23 @@ import kotlin.test.*
 @Suppress("NonAsciiCharacters")
 class CeeloUnitTest {
 
+    @Suppress("UNUSED_PARAMETER")
+    fun main(args: Array<String>) {
+        /*"ici dans ce main c'est le playground pour tester du code"*/
+        println("un jet de dés :")
+        dicesThrow.run playerOne@{
+            dicesThrow.run playerTwo@{
+                do {
+                    println("player one throw : ${this@playerOne}")
+                    println("player two throw : ${this@playerTwo}")
+                    val result = this@playerOne
+                        .compareThrows(secondPlayerThrow = this@playerTwo)
+                    if (result == WIN) println("player one : $WIN")
+                    else println("player two : $WIN")
+                } while (result == RETHROW)
+            }
+        }
+    }
     @Test
     fun `Si le jet est correct alors la propriété dicesThrow renvoi un triplet d'entier entre 1 et 6`() =
         dicesThrow.run {

@@ -161,20 +161,3 @@ enum class DiceThrowResult {
     WIN, LOOSE, RETHROW
 }
 
-@Suppress("UNUSED_PARAMETER")
-fun main(args: Array<String>) {
-    /*"ici dans ce main c'est le playground pour tester du code"*/
-    println("un jet de dés :")
-    dicesThrow.run playerOne@{
-        dicesThrow.run playerTwo@{
-            do {
-                println("player one throw : ${this@playerOne}")
-                println("player two throw : ${this@playerTwo}")
-                val result = this@playerOne
-                    .compareThrows(secondPlayerThrow = this@playerTwo)
-                if (result == WIN) println("player one : $WIN")
-                else println("player two : $WIN")
-            } while (result == RETHROW)
-        }
-    }
-}

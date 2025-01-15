@@ -4,9 +4,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-//    application
 }
-//application { mainClass.set("game.ceelo.domain.CeeloKt") }
+
 android {
     namespace = "education.cccp.jetpack.compose.ceelo"
     compileSdk = 35
