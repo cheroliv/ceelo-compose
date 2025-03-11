@@ -77,6 +77,7 @@ class CeeloUnitTest {
 
     @Test
     fun `Si le jet est un triplet uniforme alors la propriété uniformTripletValue renvoi la valeur facial du dé`() {
+//        assertThat(`1_2_3`.uniformTripletValue).is(NOT_A_TRIPLET)
         assertEquals(NOT_A_TRIPLET, `1_2_3`.uniformTripletValue)
         assertEquals(ONE, `1_1_1`.uniformTripletValue)
         assertEquals(TWO, `2_2_2`.uniformTripletValue)

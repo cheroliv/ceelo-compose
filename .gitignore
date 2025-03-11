@@ -11,6 +11,7 @@ captures
 local.properties
 .kotlin
 backend.zip
-chat-2024-12-18T22_38_16.938Z.json
+chat-*.json
 migration_from_xml.adoc
 app-legacy
+app.zip
