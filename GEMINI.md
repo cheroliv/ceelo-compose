@@ -1,0 +1,1 @@
+Projet de migration d'une application Android native en Kotlin pour le jeu de dés Cee-lo, passant d'une architecture traditionnelle basée sur les layouts XML à une interface utilisateur entièrement déclarative avec Jetpack Compose.

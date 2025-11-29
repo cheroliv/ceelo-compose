@@ -1,5 +1,19 @@
 = Jeu de Cee Lo
 
+== Migration vers Jetpack Compose
+
+Ce projet est en cours de migration d'une architecture Android traditionnelle (basée sur les layouts XML) vers une interface utilisateur entièrement déclarative avec Jetpack Compose. L'objectif est de moderniser la base de code, d'améliorer la productivité des développeurs et de créer une interface utilisateur plus maintenable et réactive.
+
+Le développement est guidé par une constitution de projet qui définit les principes suivants :
+
+*   **I. UI Déclarative avec Jetpack Compose**: Toute nouvelle UI est construite avec Jetpack Compose.
+*   **II. Kotlin Comme Langage Unique**: Le projet est 100% Kotlin.
+*   **III. Architecture MVVM**: L'état de l'UI est géré dans des ViewModels, séparé des Composables.
+*   **IV. Prévisualisation et Tests d'UI**: Les Composables doivent avoir des `@Preview` et être couverts par des tests d'UI.
+*   **V. Tests Unitaires pour la Logique**: Toute la logique métier et de ViewModel doit être couverte par des tests unitaires.
+
+Pour plus de détails, consultez le document de constitution complet sur `.specify/memory/constitution.md`.
+
 == Présentation
 
 === Le jeu de cee-lo.
