@@ -1,29 +1,36 @@
 package ceelo.domain
 
-import ceelo.domain.DiceThrowResult.*
-import kotlin.test.*
+import ceelo.domain.DiceThrowResult.LOOSE
+import ceelo.domain.DiceThrowResult.RETHROW
+import ceelo.domain.DiceThrowResult.WIN
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 
 
 @Suppress("NonAsciiCharacters")
 class CeeloUnitTest {
-
-    @Suppress("UNUSED_PARAMETER")
-    fun main(args: Array<String>) {
-        /*"ici dans ce main c'est le playground pour tester du code"*/
-        println("un jet de dés :")
-        dicesThrow.run playerOne@{
-            dicesThrow.run playerTwo@{
-                do {
-                    println("player one throw : ${this@playerOne}")
-                    println("player two throw : ${this@playerTwo}")
-                    val result = this@playerOne
-                        .compareThrows(secondPlayerThrow = this@playerTwo)
-                    if (result == WIN) println("player one : $WIN")
-                    else println("player two : $WIN")
-                } while (result == RETHROW)
+    companion object {
+        @JvmStatic
+        @Suppress("UNUSED_PARAMETER")
+        fun main(args: Array<String>) {
+            /*"ici dans ce main c'est le playground pour tester du code"*/
+            println("un jet de dés :")
+            dicesThrow.run playerOne@{
+                dicesThrow.run playerTwo@{
+                    do {
+                        println("player one throw : ${this@playerOne}")
+                        println("player two throw : ${this@playerTwo}")
+                        val result = this@playerOne
+                            .compareThrows(secondPlayerThrow = this@playerTwo)
+                        if (result == WIN) println("player one : $WIN")
+                        else println("player two : $WIN")
+                    } while (result == RETHROW)
+                }
             }
         }
     }
+
     @Test
     fun `Si le jet est correct alors la propriété dicesThrow renvoi un triplet d'entier entre 1 et 6`() =
         dicesThrow.run {
@@ -148,7 +155,7 @@ class CeeloUnitTest {
     }
 
     @Test
-    fun `Si le jet contient un triplet uniforme alors la propriété whichCase renvoi TRIPLET_CASE`():Unit =
+    fun `Si le jet contient un triplet uniforme alors la propriété whichCase renvoi TRIPLET_CASE`(): Unit =
         UNIFORM_TRIPLETS.forEach { assertEquals(UNIFORM_TRIPLET_CASE, it.whichCase) }
 
     @Test
